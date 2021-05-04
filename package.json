@@ -1,0 +1,21 @@
+{
+  "name": "demonlist",
+  "version": "1.0.3",
+  "description": "Unofficial package to look for things from https://pointercrate.com/",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "url": "https://github.com/loops6340/node-demonlist"
+  },
+  "author": "loops6340",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^2.7.2"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
