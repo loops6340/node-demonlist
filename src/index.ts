@@ -27,6 +27,25 @@ async function getDemonByName(name: string):Promise<DemonResultsByPosition['data
   }
 }
 
-export { getDemonByPosition, getDemonByName }
+interface RandomDemonOptions {
+  list?: "main" | "extended"
+  after?: number;
+  limit?: number; 
+}
+
+async function randomDemon(options:RandomDemonOptions):Promise<DemonResultsByPosition['data']> {
+  const random = (min:number, max:number) => Math.round(Math.random() * (max - min)) + min;
+  if(options.list === "main") {
+    return getDemonByPosition(Math.round(Math.random() * 75))
+  } else if (options.list === "extended") {
+    return getDemonByPosition(random(76, 150))
+  } else if (options.after && options.limit) {
+    return getDemonByPosition(random(options.after + 1 , options.limit))
+  } else {
+    throw new Error("option not specified");
+  }
+}
+
+export { getDemonByPosition, getDemonByName, randomDemon }
 
 

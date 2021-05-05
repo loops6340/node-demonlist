@@ -3,6 +3,7 @@ Unofficial node package to look for things from https://pointercrate.com/
 
 ## Examples:
 
+### get demon
 ```js
 const { getDemonByPosition, getDemonByName } = require('demonlist')
 
