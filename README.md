@@ -16,7 +16,7 @@ const getTop1Creators = async () => {
 //or
 
 const getTartarusCreators = async () => {
-  const demon = await demons.getByName('tartarus')
+  const demon = await new Demon().getByName('tartarus')
   return demon.creators
 }
 
