@@ -1,1 +1,1 @@
-import './demon'
+export * from './demon'
