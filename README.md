@@ -6,17 +6,17 @@ Unofficial node package to look for things from https://pointercrate.com/
 ### Getting demon:
 
 ```js
-const { getDemonByPosition, getDemonByName } = require('demonlist')
+const { Demon } = require('demonlist')
 
-//you can get demon by position in the demonlist
-const getDemonCreators = async () => {
-  const demon = await getDemonByPosition(1)
+const getTop1Creators = async () => {
+  const demon = await new Demon().getByPosition(1)
   return demon.creators
 }
 
-//or by name
-const getDemonCreators = async () => {
-  const demon = await getDemonByName('tartarus')
+//or
+
+const getTartarusCreators = async () => {
+  const demon = await demons.getByName('tartarus')
   return demon.creators
 }
 
@@ -26,18 +26,19 @@ const getDemonCreators = async () => {
 ### Getting random demon:
 
 ```js
-const getRandomDemon = async () {
-  const demon = await randomDemon({ after: 2, limit: 4 })
-  console.log(demon.name)
-  // Zodiac or Kenos
+const { Demon } = require('demonlist')
+
+const getRandomDemon = async () => {
+  const demon = await new Demon().random({ after: 2, limit: 4 })
+  console.log(demon.name, demon.position)
+  // Zodiac or Kenos (3 or 4)
 }
 // or
-const getRandomDemon = async () {
-  const demon = await randomDemon({ list: 'main' })
-  console.log(demon.name)
+const getRandomDemon = async () => {
+  const demon = await new Demon().random({ list: 'main' })
+  console.log(demon.name, demon.position)
   // random demon from main list
 }
 ```
-
 
 Some functionalities are missing, they will be added soon.
