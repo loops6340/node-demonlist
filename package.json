@@ -1,6 +1,6 @@
 {
   "name": "demonlist",
-  "version": "2.1.8",
+  "version": "2.2.0",
   "description": "Unofficial package to look for things from https://pointercrate.com/",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
